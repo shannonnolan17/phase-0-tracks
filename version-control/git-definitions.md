@@ -10,3 +10,5 @@
     - In git, a "commit" is a save-point in a project. Any time you edit files in a project and want to create a save-point, you have to complete commits. A good commit message is specific and descriptive of what was changed.
 * What is a merge conflict?
     - A merge conflict is an issue that occurs when incongruous changes are made to the same line of code in a file, or when you attempt to edit a file that has previously been deleted.
+
+** ASSIGNMENT 1.5 RELEASE 2 MEANINGLESS EDIT **
