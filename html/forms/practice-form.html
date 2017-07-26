@@ -1,9 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>Practice Form</title>
 </head>
 <body>
+<form name="chocolate" action="success.html" method="post">
+  <fieldset>
+    <div>
+      <label>Enter Name:</label>
+      <input type="text" name="firstname">
+    </div>
+
+    <div>
+      <label>Enter Email:</label>
+      <input type="email" name="email">
+    </div>
+
+    <div>
+      <label>Enter Password:</label>
+      <input type="password" name="password">
+    </div>
+  </fieldset>
+
+  <fieldset>
+
+
+  <div>
+    <label>Hershey Chocolate Pool</label>
+    <br>
+    <textarea name="chocolate_pool" rows="10" cols="30">Discuss what you would do with a pool of chocolate.</textarea>
+
+  </div>
+
+    <div>
+      <label>Type of chocolate:</label>
+      <select name="type">
+        <option value="milk_chocolate">Milk Chocolate</option>
+        <option value="dark_chocolate">Dark Chocolate</option>
+        <option value="white_chocolate">White "Fake" Chocolate</option>
+      </select>
+    </div>
+
+
+  </fieldset>
+
+  <button type="submit">Submit your Chocolate</button>
+</form>
 
 </body>
 </html>
