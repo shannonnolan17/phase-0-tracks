@@ -1,0 +1,40 @@
+1. Enter elevator
+2. Turn to left
+3. Turn to face door/ elevator buttons
+4. Extend arm and push desired floor
+5.      If desire is go home- push 3
+6.      If desire is roof- push 6
+7.      If desire is exit building- push L
+8. When desired floor is reached, exit elevator
+
+
+1. Enter Target
+2. Move forward 50 steps
+3. Grab basket
+3. Turn to right at Dollar Section
+4.      If cute item, add to basket
+5. Turn right
+6. Move forward towards north wall
+7. Glance at clothes(attempt to not buy)
+8.      If sale, turn left
+9.      If cute item, add to basket
+10. Turn right
+11. Move forward toward east wall
+12.     If Reeses, add to basket
+13. Turn right
+14. Move forward toward south wall
+15.     If no groceries at home, add groceries to basket
+16. Turn right
+17. Move forward toward west wall
+18.     If dog is cute, add dog toy to basket (dog is always cute)
+19. Turn left
+20. Place items on belt
+21. Pay for items
+22.     If over $50, stress but buy anyway
+22. Thank cashier
+23. Turn right
+24. Move forward
+25. Turn left
+26. Exit
+23. 
+
