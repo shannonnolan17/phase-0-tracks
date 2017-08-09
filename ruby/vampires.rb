@@ -1,3 +1,4 @@
+
 puts "How many employees are you processing?"
   user_input = gets.to_i
 
