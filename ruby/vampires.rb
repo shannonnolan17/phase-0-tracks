@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> ed123a20294641c07137059c2a3d44fe4e5ab1a4
 puts "How many employees are you processing?"
   user_input = gets.to_i
 
