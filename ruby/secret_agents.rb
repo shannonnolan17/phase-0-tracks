@@ -38,7 +38,12 @@ else
   puts decrypted_msg
 end
 
-
+#DRIVER CODE
+# asks the user what they want either encrypt or decrypt
+# if they choose encrypt- it takes them to the encrypt block of code
+# code runs and spits out encrypted password
+# if they choose decrypt- it takes them to the decrypt block of code
+# code runs and spits out decrypted password
 
 
 
