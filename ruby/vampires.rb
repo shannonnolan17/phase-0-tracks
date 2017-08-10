@@ -1,15 +1,10 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
 
->>>>>>> ed123a20294641c07137059c2a3d44fe4e5ab1a4
 puts "How many employees are you processing?"
   user_input = gets.to_i
 
 while user_input > 0
 
->>>>>>> solo-challenge
+
 puts "What is your name?"
   name = gets.chomp
 
@@ -25,24 +20,18 @@ puts "Our company cafeteria serves garlic bread. Should we order some for you?"
 puts "Would you like to enroll in the company’s health insurance?"
   insurance = gets.chomp == "yes"
 
-<<<<<<< HEAD
-if name == "Drake Cula" || "Tu Fang"
-=======
+
 if name == "Drake Cula" || name == "Tu Fang"
->>>>>>> solo-challenge
+
   puts "Definitely a vampire"
 elsif(age_check && garlic) || insurance
   puts "Probably not a vampire"
 elsif
   puts "Almost certainly a vampire"
-<<<<<<< HEAD
-elsif (age_check == false || garlic == "no") || insurance == "no"
-  puts "Probaly not a vampire"
 
-end
-=======
 elsif (age_check == false && garlic == "no") || insurance == "no"
   puts "Probaly not a vampire"
+
 elsif
   puts "Results are inconclusive"
 end
@@ -59,4 +48,4 @@ user_input -= 1
 end
 
 puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends!"
->>>>>>> solo-challenge
+
