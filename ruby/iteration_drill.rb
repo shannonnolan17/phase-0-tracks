@@ -14,14 +14,17 @@ end
 # zombie_apocalypse_supplies using #each.
 # For instance: are boots in your list of supplies?
 # ----
-def list_check (item)
-
-zombie_apocalypse_supplies.each do |item|
-yield ("boots")
+def list_check (new_supply)
+zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars", "shotgun", "compass", "CB radio", "batteries"]
+if zombie_apocalypse_supplies.include? new_supply
+  puts "You already have that!"
+else
+  puts "You need that!"
 end
 end
-list_check { |item| if item != zombie_apocalypse_supplies puts "You need that!"}
 
+puts list_check("boots")
+puts list_check("hatchet")
 
 # 3. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
