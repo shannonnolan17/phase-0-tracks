@@ -1,16 +1,19 @@
+collection_of_names = []
+
 loop do
 puts "Would you like a spy name? Type 'y' for yes and 'quit' for no."
 user_input = gets.chomp
 break if user_input == "quit"
 #swap first and last names but defining first and last name
-  puts "What is the first name you'd like to make a fake name with?"
-  first_name = gets.chomp
-  puts "What is the last name you'd like to make a fake name with?"
-  last_name = gets.chomp
-#swap by switching last and first and add together
-  original_name = last_name.downcase +  first_name.downcase
 
-  collection_of_names = []
+puts "Please enter name:"
+name = gets.chomp.downcase
+
+new_name = name.split(" ")
+first_name = new_name[0]
+last_name = new_name[1]
+swapped_name = last_name, first_name
+original_name = swapped_name.join(", ")
 
 #define vowels and alphabet w/o vowels
   vowels = ["a", "e", "i", "o", "u"]
@@ -23,16 +26,16 @@ break if user_input == "quit"
     if vowels.include? char
       vowels.rotate(1)[vowels.index(char)]
     else
-      alphabet.rotate(1)[alphabet.index(char)]
+      char.next
     end
   end
 #join new string together to form name
 spy_name = new_name.join('')
+puts spy_name
 collection_of_names << spy_name
 
 collection_of_names.each do |name|
-  puts "#{name} is actually #{first_name} #{last_name}"
+  puts "#{spy_name} is actually #{first_name} #{last_name}"
+
 end
 end
-
-
