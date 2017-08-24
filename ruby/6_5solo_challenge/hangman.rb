@@ -10,6 +10,10 @@ def initialize(word)
   @current_word = "_" * (word.length)
 end
 
+def what_is_the_word
+  @word
+end
+
 def set_current_word(word)
     @current_word=word
 end
