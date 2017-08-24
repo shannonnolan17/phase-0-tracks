@@ -1,7 +1,10 @@
-require_relative 'hangman_program'
+require_relative 'hangman'
 
 describe Hangman do
-  let (:Hangman){Hangman.new}
-  it "Takes a word as parameter in initialization" do
-    expect(Hangman.initialize("rover")) to eq rover
+  let(:new_game) {Hangman.new("lawn")}
+  it "sets word upon initialization" do
+    expect(Hangman.new("lawn").to eq)
+  it "checks if letter is in word" do
+    expect(Hangman.guess("l")).to eq "l___"
   end
+end
