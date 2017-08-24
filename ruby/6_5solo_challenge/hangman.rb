@@ -1,7 +1,6 @@
 class Hangman
 
 attr_accessor :word
-attr_accessor :guesses
 attr_accessor :current_word
 
 def initialize(word)
@@ -13,10 +12,6 @@ end
 
 def set_current_word(word)
     @current_word=word
-end
-
-def guesses_available
-  @guesses = @word.length
 end
 
 def guess(guess_letter)
@@ -35,29 +30,32 @@ def game_over
     puts "You did it!"
   end
 end
+
 end
 #-------------------------------------------------------------------
 #USER INTERFACE
-
-game = Hangman.new("unicorn")
-word = "unicorn"
 puts "Welcome to Hangman!"
-counter = 0
-while counter < word.length
-puts "Please enter a letter! Type 'done' when finished!"
-guess_letter = gets.chomp
-game.guess(guess_letter)
-counter += 1
+puts "Player 1 please enter a word:"
+word = gets.chomp
+game = Hangman.new(word)
+
+guessed_letters = []
+attempts = 0
+while attempts < word.length + 1
+  puts "Player 2 please enter a letter!"
+  guess_letter = gets.chomp
+
+    if guessed_letters.include? guess_letter
+      puts "Whoops! You already tried that letter! Try again!"
+      attempts -= 1
+    end
+  guessed_letters << guess_letter
+  game.guess(guess_letter)
+  attempts += 1
 end
 game.game_over
 
-# hangman = Hangman.new("genius")
-# hangman.guess("g")
-# hangman.guess("n")
-# hangman.guess("u")
-# hangman.guess("t")
-# hangman.guess("e")
-# hangman.game_over
+
 
 
 
