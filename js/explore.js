@@ -13,4 +13,11 @@ function reverseString(str){
   return newString;
 }
 
-console.log(reverseString("hello"));
+//DRIVER CODE
+
+var word = (reverseString("hello"));
+console.log(word);
+
+if(1 == 1) {
+  console.log(word);
+}
