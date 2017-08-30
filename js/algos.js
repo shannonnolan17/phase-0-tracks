@@ -34,33 +34,67 @@ function matchingPairs(obj1, obj2){
     arrayPair2.push(obj2[value]);
 }
 
-  for (var i = 0; i < arrayPair1.length; i++){
-    if (arrayPair2.indexOf(arrayPair1[i]) > -1){
-      return true;
-    }else {
-      return false;
+  for (var e = 0; e < arrayPair1.length; e++){
+    for(var c = 0; c < arrayPair2.length; c++){
+      if (arrayPair1[e] == arrayPair2[c]) {
+         return true;
+       }else {
+         continue;
+         return false;
+      }
+    }
   }
 }
 
-  // for (var i = 0; i < arrayPair1.length; i++) {
-  //   for (var e = 0; e < arrayPair2.length; e++) {
-  //       if (arrayPair1[i] == arrayPair2[e]){
-  //         return true;
-  //       }else{
-  //         return false;
-  //       }
-  //       }
-  //   }
 
+
+//Define function with integer parameter
+//Define letters of alphabet
+//Define string length-- random between 1 and 10
+//Define empty string for word
+//Define empty array for words
+//For as  many times as the integer entered is
+  //for as many times as the random string length
+    //loop through the alphabet randomly and put into string
+  //push word into array
+
+function wordMaker() {
+  var possible = "abcdefghiklmnopqrstuvwxyz";
+  var newWord = "";
+  var stringLength = Math.floor(Math.random() * 10);
+  while (newWord.length < stringLength){
+  newWord += possible[Math.floor(Math.random() * stringLength)];
+}
+  return newWord
+}
+
+function randomWord (integer){
+  var wordArray = [];
+  for (var d = 0; d < integer; d++) {
+    word = wordMaker();
+    wordArray.push(word);
+  }
+  return wordArray;
 }
 
 
-console.log(matchingPairs({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
-console.log(matchingPairs({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3}));
-console.log(matchingPairs({animal: "Cat", legs: 4}, {animal: "Dog", legs: 3}));
+//DRIVER CODE------------------------------------------------
+
+var times = 10;
+for(var b=0; b < times; b++){
+  word = (randomWord(3));
+  console.log(word);
+  longWordArray = (longestWord(word));
+  console.log(longWordArray);
+}
+//----------------------------------------------------------
+// console.log(randomWord(2));
+// console.log(randomWord(3));
+
+// console.log(matchingPairs({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
+// console.log(matchingPairs({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3}));
+// console.log(matchingPairs({animal: "Cat", legs: 4}, {animal: "Dog", legs: 3}));
 
 
-console.log(longestWord(["long phrase","longest phrase","longer phrase"]));
-console.log(longestWord(["Emma", "Shannon"]));
-
-
+// console.log(longestWord(["long phrase","longest phrase","longer phrase"]));
+// console.log(longestWord(["Emma", "Shannon"]));
