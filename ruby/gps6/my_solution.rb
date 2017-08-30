@@ -93,3 +93,14 @@ STATE_DATA.each { |state, data|VirusPredictor.new(state).virus_effects }
 
 #=======================================================================
 # Reflection Section
+
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+  #The first syntax is the rocket or => and the second is the :. The : is better for storing items because the computer only has to store it once compared to the => which stores it everytime.
+# What does require_relative do? How is it different from require?
+  #Require_relative allows us to access a file with code in the same directory so we can use it in another file with code.
+# What are some ways to iterate through a hash?
+  #You can use .times |key, value| or .each |key,value|.
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+  #They were uncessary and repeated. We didn't need to pass any arguments into the two other methods because they are attributes that can be accessed in the class already. We did not need to pass anything outside of the class.
+# What concept did you most solidify in this challenge?
+  #Refactoring. I feel so much better about refactoring and about how to go about refactoring. How you should look at the umbrella items and go through your code for each one to find something you can change.
