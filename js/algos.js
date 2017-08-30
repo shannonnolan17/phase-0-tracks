@@ -48,15 +48,18 @@ function matchingPairs(obj1, obj2){
 
 
 
-//Define function with integer parameter
+//Define function for creating word
 //Define letters of alphabet
 //Define string length-- random between 1 and 10
 //Define empty string for word
-//Define empty array for words
-//For as  many times as the integer entered is
-  //for as many times as the random string length
+//While the string length is less than the random number
     //loop through the alphabet randomly and put into string
+//return new word
+//Create new function with integer parameter
+//For as many times the integer indicated
+  //call word maker to generate word
   //push word into array
+//return array
 
 function wordMaker() {
   var possible = "abcdefghiklmnopqrstuvwxyz";
