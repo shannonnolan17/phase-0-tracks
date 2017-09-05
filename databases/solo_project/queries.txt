@@ -1,0 +1,115 @@
+solo_project (week_8_solo) :> CREATE TABLE employees (
+-bash: syntax error near unexpected token `('
+
+solo_project (week_8_solo) :> sqlite3 solo_project
+SQLite version 3.8.10.2 2015-05-20 18:17:19
+Enter ".help" for usage hints.
+sqlite> CREATE TABLE employees (
+   ...> id INTEGER PRIMARY KEY,
+   ...> name VARCHAR(255),
+   ...> position INT
+   ...> ,
+   ...> over_18 BOOLEAN
+   ...> );
+sqlite> SELECT * FROM employees;
+sqlite> INSERT INTO employees(name, position, over_18) VALUES ("Emily", 2, "true");
+sqlite> SELECT * FROM employees;
+1|Emily|2|true
+sqlite> INSERT INTO employees(name, position, over_18) VALUES ("Ruth", 2, "false");
+sqlite> INSERT INTO employees(name, position, over_18) VALUES ("Jim", 1, "true");
+sqlite> INSERT INTO employees(name, position, over_18) VALUES ("Chelsea", 3, "true"); 
+sqlite> SELECT * FROM employees;
+1|Emily|2|true
+2|Ruth|2|false
+3|Jim|1|true
+4|Chelsea|3|true
+sqlite> INSERT INTO employees(name, position, over_18) VALUES ("Kim", 2, "false");
+sqlite> SELECT * FROM employees;
+1|Emily|2|true
+2|Ruth|2|false
+3|Jim|1|true
+4|Chelsea|3|true
+5|Kim|2|false
+sqlite> CREATE TABLE position (
+   ...> position_id INT,
+   ...> FOREIGN KEY (position_id) REFERENCES employees(id)
+   ...> );
+sqlite> SELECT * FROM position
+   ...> ALTER TABLE position ADD name VARCHAR(255);
+Error: near "ALTER": syntax error
+sqlite> ALTER TABLE position ADD name VARCHAR(255);
+sqlite> INSERT INTO position(position_id, name) VALUES (1, "Server");
+sqlite> INSERT INTO position(position_id, name) VALUES (2, "Hostess");
+sqlite> INSERT INTO position(position_id, name) VALUES (3, "Cook");
+sqlite> SELECT * FROM position
+   ...> ;
+1|Server
+2|Hostess
+3|Cook
+sqlite> UPDATE employees SET over_18="true" WHERE "Ruth";
+sqlite> SELECT * FROM employees;
+1|Emily|2|true
+2|Ruth|2|false
+3|Jim|1|true
+4|Chelsea|3|true
+5|Kim|2|false
+sqlite> UPDATE employees SET over_18="true" WHERE name="Ruth";
+sqlite> SELECT * FROM employees
+   ...> ;
+1|Emily|2|true
+2|Ruth|2|true
+3|Jim|1|true
+4|Chelsea|3|true
+5|Kim|2|false
+sqlite> SELECT * FROM employees, position
+   ...> ;
+1|Emily|2|true|1|Server
+1|Emily|2|true|2|Hostess
+1|Emily|2|true|3|Cook
+2|Ruth|2|true|1|Server
+2|Ruth|2|true|2|Hostess
+2|Ruth|2|true|3|Cook
+3|Jim|1|true|1|Server
+3|Jim|1|true|2|Hostess
+3|Jim|1|true|3|Cook
+4|Chelsea|3|true|1|Server
+4|Chelsea|3|true|2|Hostess
+4|Chelsea|3|true|3|Cook
+5|Kim|2|false|1|Server
+5|Kim|2|false|2|Hostess
+5|Kim|2|false|3|Cook
+sqlite> SELECT * FROM employees;
+1|Emily|2|true
+2|Ruth|2|true
+3|Jim|1|true
+4|Chelsea|3|true
+5|Kim|2|false
+sqlite> SELECT * FROM position;
+1|Server
+2|Hostess
+3|Cook
+sqlite> SELECT employees.*, position.* FROM employees, position WEHRE employees.id = position.position_id;
+Error: near "employees": syntax error
+sqlite> SELECT employees.*, position.* FROM employees, position WHERE employees.id = position.position_id;
+1|Emily|2|true|1|Server
+2|Ruth|2|true|2|Hostess
+3|Jim|1|true|3|Cook
+sqlite> SELECT name, id FROM employees LEFT JOIN position ON employees.id = position.position_id;
+Error: ambiguous column name: name
+sqlite> SELECT id FROM employees LEFT JOIN position ON employees.id = position.position_id;
+1
+2
+3
+4
+5
+sqlite> SELECT employees.name, employees.id FROM employees INNER JOIN position ON employees.id=position.position_id;
+Emily|1
+Ruth|2
+Jim|3
+sqlite> DELETE FROM employees WHERE name="Ruth";
+sqlite> SELECT * FROM employees;
+1|Emily|2|true
+3|Jim|1|true
+4|Chelsea|3|true
+5|Kim|2|false
+sqlite> .exit
