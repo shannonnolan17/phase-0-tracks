@@ -16,6 +16,7 @@ sqlite> SELECT * FROM reviews;
 
 
 ####JOIN ALL THREE######
+
 sqlite> SELECT * FROM users 
    ...> LEFT JOIN reviews ON users.id = reviews.user_id
    ...> LEFT JOIN businesses ON businesses.id = reviews.business_id
@@ -26,6 +27,7 @@ sqlite> SELECT * FROM users
 3|Angela|Jolie|||||||
 
 ####JUST CERTAIN COLUMNS######
+
 sqlite> SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM users
    ...> LEFT JOIN reviews ON users.id = reviews.user_id
    ...> LEFT JOIN businesses ON businesses.id = reviews.business_id;
@@ -35,6 +37,7 @@ Mandy|Kaling|The Beagle Nightclub|3|ehh
 Angela|Jolie|||
 
 ####JUST ONE BUSINESS INFORMATION####
+
 sqlite> SELECT * FROM businesses
    ...> LEFT JOIN reviews ON businesses.id = reviews.business_id
    ...> LEFT JOIN users ON users.id = reviews.user_id
